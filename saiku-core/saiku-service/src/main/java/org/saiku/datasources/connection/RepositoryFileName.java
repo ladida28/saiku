@@ -1,8 +1,8 @@
 package org.saiku.datasources.connection;
 
-import org.apache.commons.vfs.FileName;
-import org.apache.commons.vfs.FileType;
-import org.apache.commons.vfs.provider.AbstractFileName;
+import org.apache.commons.vfs2.FileName;
+import org.apache.commons.vfs2.FileType;
+import org.apache.commons.vfs2.provider.AbstractFileName;
 
 public class RepositoryFileName
         extends AbstractFileName
@@ -18,4 +18,10 @@ public class RepositoryFileName
     }
 
     protected void appendRootUri(StringBuffer stringBuffer, boolean b) {}
+
+	@Override
+	protected void appendRootUri(StringBuilder buffer, boolean addPassword) {
+		// TODO Auto-generated method stub
+		
+	}
 }

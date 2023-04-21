@@ -17,7 +17,7 @@ import org.apache.commons.lang.StringUtils;
 import org.saiku.olap.dto.resultset.CellDataSet;
 import org.saiku.olap.dto.resultset.DataCell;
 
-import com.lowagie.text.Document;
+/*import com.lowagie.text.Document;
 import com.lowagie.text.DocumentException;
 import com.lowagie.text.Element;
 import com.lowagie.text.Font;
@@ -30,10 +30,17 @@ import com.lowagie.text.html.WebColors;
 import com.lowagie.text.pdf.PdfContentByte;
 import com.lowagie.text.pdf.PdfPCell;
 import com.lowagie.text.pdf.PdfPTable;
-import com.lowagie.text.pdf.PdfWriter;
+import com.lowagie.text.pdf.PdfWriter;*/
+import com.itextpdf.text.*;
+import com.itextpdf.text.html.WebColors;
+import com.itextpdf.text.pdf.PdfContentByte;
+import com.itextpdf.text.pdf.PdfWriter;
+import com.itextpdf.text.pdf.*;
+import com.itextpdf.text.pdf.PdfPTable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+@SuppressWarnings("deprecation")
 public class PdfReport {
     private final ReportData section= new ReportData();
     private static final Logger log = LoggerFactory.getLogger(PdfReport.class);
@@ -119,7 +126,7 @@ public class PdfReport {
 		table.setWidthPercentage(90);
 
 		Font myFont = FontFactory.getFont(
-			FontFactory.HELVETICA, 8, Color.WHITE);
+			FontFactory.HELVETICA, 8);
 		if (aSection.getDes() != null) {
 		  if (aSection.getParent() != null && aSection.getParent().getDes() != null) {
 			aSection.setDes(aSection.getParent().getDes().trim() + "." + aSection.getDes().trim());

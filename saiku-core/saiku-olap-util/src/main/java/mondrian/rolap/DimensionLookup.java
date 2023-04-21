@@ -6,6 +6,7 @@ package mondrian.rolap;
 public class DimensionLookup {
 
   public static boolean getHanger(RolapCubeDimension dim){
-    return dim.hanger;
+	  throw new UnsupportedOperationException();
+	  //return dim.hanger;
   }
 }

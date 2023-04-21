@@ -1,10 +1,15 @@
 package org.saiku.web.export;
 
-import com.lowagie.text.Document;
+/*import com.lowagie.text.Document;
 import com.lowagie.text.PageSize;
 import com.lowagie.text.Rectangle;
 import com.lowagie.text.pdf.PdfContentByte;
-import com.lowagie.text.pdf.PdfWriter;
+import com.lowagie.text.pdf.PdfWriter;*/
+import com.itextpdf.text.*;
+import com.itextpdf.text.Rectangle;
+import com.itextpdf.text.pdf.PdfContentByte;
+import com.itextpdf.text.pdf.PdfWriter;
+
 import java.net.URISyntaxException;
 import org.apache.avalon.framework.configuration.ConfigurationException;
 import org.apache.batik.transcoder.TranscoderInput;
