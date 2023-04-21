@@ -50,7 +50,7 @@ public class PdfReport {
 		section.setRowHeader(c.getCellSetHeaders());
 		
 		Document document = new Document(PageSize.A4.rotate(),0,0,30,10);
-		Color color = WebColors.getRGBColor("#002266");
+		BaseColor color = WebColors.getRGBColor("#002266");
 		
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		int dim = section.dimTab(c.getCellSetBody(), c.getCellSetHeaders());
@@ -60,7 +60,8 @@ public class PdfReport {
 			document.open();			
 			DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 			Date date = new Date();
-			document.setHeader(new HeaderFooter(new Phrase("Saiku Export - " + dateFormat.format(date) + " Page: "), null));
+			//document.setHeader(new HeaderFooter(new Phrase("Saiku Export - " + dateFormat.format(date) + " Page: "), null));
+			document.addHeader("header","Saiku Export - " + dateFormat.format(date) + " Page: ");
 			
 			ArrayList<ReportData.Section> rowGroups = section.section(c.getCellSetBody(), c.getCellSetHeaders(), 0, dim,
 					null);
@@ -114,7 +115,7 @@ public class PdfReport {
 	}
 	
 
-	private void populatePdf(Document doc, ArrayList<ReportData.Section> section, int dim, Color color, float c) {
+	private void populatePdf(Document doc, ArrayList<ReportData.Section> section, int dim, BaseColor color, float c) {
 	  for (ReportData.Section aSection : section) {
 		int temp = 1;
 		if (aSection.getHead().size() != 0) {
@@ -169,7 +170,7 @@ public class PdfReport {
 			  cell.setBorder(Rectangle.BOTTOM);
 			  int r = t % 2;
 			  if (r != 0) {
-				cell.setBackgroundColor(color(Color.BLACK, (float) 0.92));
+				cell.setBackgroundColor(BaseColor.BLACK);//(color(Color.BLACK, (float) 0.92));
 			  }
 
 			  if (aSection
@@ -192,7 +193,7 @@ public class PdfReport {
 		  log.error("Error creating PDF", e);
 		}
 
-		populatePdf(doc, aSection.getChild(), dim, color(color, c + 0.15f), c);
+		populatePdf(doc, aSection.getChild(), dim, color,c); //(color, c + 0.15f), c);
 	  }
 	}
 
