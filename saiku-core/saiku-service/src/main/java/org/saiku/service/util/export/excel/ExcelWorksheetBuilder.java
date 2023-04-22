@@ -7,6 +7,7 @@ import org.apache.poi.ss.SpreadsheetVersion;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.usermodel.Font;
 import org.apache.poi.ss.util.CellRangeAddress;
+import org.apache.poi.xssf.usermodel.IndexedColorMap;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 import org.apache.poi.xssf.usermodel.XSSFColor;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -125,24 +126,25 @@ public class ExcelWorksheetBuilder {
 
         basicCS = excelWorkbook.createCellStyle();
         basicCS.setFont(font);
-        basicCS.setAlignment(CellStyle.ALIGN_LEFT);
-        basicCS.setVerticalAlignment(CellStyle.VERTICAL_TOP);
+        basicCS.setAlignment(HorizontalAlignment.LEFT);//.ALIGN_LEFT);
+        basicCS.setVerticalAlignment(VerticalAlignment.TOP);//CellStyle.VERTICAL_TOP);
         setCellBordersColor(basicCS);
 
         Font totalsFont = excelWorkbook.createFont();
         totalsFont.setFontHeightInPoints((short) BASIC_SHEET_FONT_SIZE);
-        totalsFont.setBoldweight(Font.BOLDWEIGHT_BOLD);
+        //totalsFont.setBoldweight(Font.BOLDWEIGHT_BOLD);
         totalsFont.setFontName(BASIC_SHEET_FONT_FAMILY);
+        totalsFont.setBold(true);
 
         totalsCS = excelWorkbook.createCellStyle();
         totalsCS.setFont(totalsFont);
-        totalsCS.setAlignment(CellStyle.ALIGN_RIGHT);
+        totalsCS.setAlignment(HorizontalAlignment.RIGHT);//CellStyle.ALIGN_RIGHT);
         setCellBordersColor(totalsCS);
 
         // Setting the default styling for number cells
         numberCS = excelWorkbook.createCellStyle();
         numberCS.setFont(font);
-        numberCS.setAlignment(CellStyle.ALIGN_RIGHT);
+        numberCS.setAlignment(HorizontalAlignment.RIGHT);//CellStyle.ALIGN_RIGHT);
 
         /*
          * justasg: Let's set default format, used if measure has no format at
@@ -159,33 +161,34 @@ public class ExcelWorksheetBuilder {
         Font headerFont = excelWorkbook.createFont();
         headerFont.setFontHeightInPoints((short) BASIC_SHEET_FONT_SIZE);
         headerFont.setFontName(BASIC_SHEET_FONT_FAMILY);
-        headerFont.setBoldweight(Font.BOLDWEIGHT_BOLD);
+        //headerFont.setBoldweight(Font.BOLDWEIGHT_BOLD);
+        headerFont.setBold(true);
 
         lighterHeaderCellCS = excelWorkbook.createCellStyle();
         lighterHeaderCellCS.setFont(headerFont);
-        lighterHeaderCellCS.setAlignment(CellStyle.ALIGN_CENTER);
+        lighterHeaderCellCS.setAlignment(HorizontalAlignment.CENTER);//CellStyle.ALIGN_CENTER);
         lighterHeaderCellCS.setFillForegroundColor(IndexedColors.GREY_25_PERCENT.getIndex());
-        lighterHeaderCellCS.setFillPattern(CellStyle.SOLID_FOREGROUND);
+        lighterHeaderCellCS.setFillPattern(FillPatternType.SOLID_FOREGROUND);//CellStyle.SOLID_FOREGROUND);
         setCellBordersColor(lighterHeaderCellCS);
 
         CellStyle darkerHeaderCellCS = excelWorkbook.createCellStyle();
         darkerHeaderCellCS.setFont(headerFont);
-        darkerHeaderCellCS.setAlignment(CellStyle.ALIGN_CENTER);
+        darkerHeaderCellCS.setAlignment(HorizontalAlignment.CENTER);//CellStyle.ALIGN_CENTER);
         darkerHeaderCellCS.setFillForegroundColor(IndexedColors.GREY_40_PERCENT.getIndex());
-        darkerHeaderCellCS.setFillPattern(CellStyle.SOLID_FOREGROUND);
+        darkerHeaderCellCS.setFillPattern(FillPatternType.SOLID_FOREGROUND);//CellStyle.SOLID_FOREGROUND);
         setCellBordersColor(darkerHeaderCellCS);
 
     }
 
     private void setCellBordersColor(CellStyle style) {
 
-        style.setBorderBottom(CellStyle.BORDER_THIN);
+        style.setBorderBottom(BorderStyle.THIN);//CellStyle.BORDER_THIN);
         style.setBottomBorderColor(IndexedColors.GREY_80_PERCENT.getIndex());
-        style.setBorderTop(CellStyle.BORDER_THIN);
+        style.setBorderTop(BorderStyle.THIN);//CellStyle.BORDER_THIN);
         style.setTopBorderColor(IndexedColors.GREY_80_PERCENT.getIndex());
-        style.setBorderLeft(CellStyle.BORDER_THIN);
+        style.setBorderLeft(BorderStyle.THIN);//CellStyle.BORDER_THIN);
         style.setLeftBorderColor(IndexedColors.GREY_80_PERCENT.getIndex());
-        style.setBorderRight(CellStyle.BORDER_THIN);
+        style.setBorderRight(BorderStyle.THIN);//CellStyle.BORDER_THIN);
         style.setRightBorderColor(IndexedColors.GREY_80_PERCENT.getIndex());
     }
 
@@ -665,7 +668,7 @@ public class ExcelWorksheetBuilder {
 
             if (colorCodeIndex != -1) {
                 numberCSClone.setFillForegroundColor(colorCodeIndex);
-                numberCSClone.setFillPattern(CellStyle.SOLID_FOREGROUND);
+                numberCSClone.setFillPattern(FillPatternType.SOLID_FOREGROUND);//CellStyle.SOLID_FOREGROUND);
             } else if (customColorsPalette == null) {
                 try {
 
@@ -677,12 +680,17 @@ public class ExcelWorksheetBuilder {
                     int greenCode = Integer.parseInt(colorCode.substring(3, 5), 16);
                     int blueCode  = Integer.parseInt(colorCode.substring(5, 7), 16);
 
-                    numberCSClone.setFillPattern(CellStyle.SOLID_FOREGROUND);
+                    numberCSClone.setFillPattern(FillPatternType.SOLID_FOREGROUND);//CellStyle.SOLID_FOREGROUND);
 
                     ((XSSFCellStyle) numberCSClone).setFillForegroundColor(
-                            new XSSFColor(new java.awt.Color(redCode, greenCode, blueCode)));
+                    //        new XSSFColor(new java.awt.Color(redCode, greenCode, blueCode)
+                    		new XSSFColor((IndexedColorMap) new java.awt.Color(redCode, greenCode, blueCode))	
+                    );
                     ((XSSFCellStyle) numberCSClone).setFillBackgroundColor(
-                            new XSSFColor(new java.awt.Color(redCode, greenCode, blueCode)));
+                            //new XSSFColor(new java.awt.Color(redCode, greenCode, blueCode))
+                    		new XSSFColor((IndexedColorMap) new java.awt.Color(redCode, greenCode, blueCode))
+                    );
+                    new XSSFColor((IndexedColorMap) new java.awt.Color(redCode, greenCode, blueCode));
                 } catch (Exception e) {
                     // we tried to set the color, no luck, lets continue
                     // without
