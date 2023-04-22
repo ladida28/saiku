@@ -22,6 +22,7 @@ import java.net.URL;
 import java.net.URLDecoder;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.jcr.RepositoryException;
@@ -246,4 +247,64 @@ public class RepositoryVfsFileObject
         }
         return inputStream;
     }
+
+	@Override
+	public int compareTo(FileObject o) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public Iterator<FileObject> iterator() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int deleteAll() throws FileSystemException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public String getPublicURIString() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean isExecutable() throws FileSystemException {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isFile() throws FileSystemException {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isFolder() throws FileSystemException {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean setExecutable(boolean executable, boolean ownerOnly) throws FileSystemException {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean setReadable(boolean readable, boolean ownerOnly) throws FileSystemException {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean setWritable(boolean writable, boolean ownerOnly) throws FileSystemException {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

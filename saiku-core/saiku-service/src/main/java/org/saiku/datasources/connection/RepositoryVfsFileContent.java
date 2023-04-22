@@ -1,5 +1,6 @@
 package org.saiku.datasources.connection;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.security.cert.Certificate;
@@ -135,4 +136,28 @@ class RepositoryVfsFileContent
     {
         return false;
     }
+
+	@Override
+	public long write(FileContent output) throws IOException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public long write(FileObject file) throws IOException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public long write(OutputStream output) throws IOException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public long write(OutputStream output, int bufferSize) throws IOException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }
