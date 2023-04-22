@@ -22,6 +22,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.charset.Charset;
 
 /**
  * Read and return log files.
@@ -35,7 +36,7 @@ public class LogExtractor {
       if(path.contains("..")){
         throw new IOException("Cannot display file outside of log folder");
       }
-      return FileUtils.readFileToString(new File(logdirectory+File.separator+path));
+      return FileUtils.readFileToString(new File(logdirectory+File.separator+path),Charset.defaultCharset());
   }
 
   public String getLogdirectory() {

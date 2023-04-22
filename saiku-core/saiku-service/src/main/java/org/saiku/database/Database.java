@@ -221,7 +221,7 @@ public class Database {
                     while(files.hasNext()){
                         File f = files.next();
                         dsm.saveInternalFile("/homes/home:admin/sample_reports/"+f.getName(),FileUtils.readFileToString(f
-                                .getAbsoluteFile()), null);
+                                .getAbsoluteFile(),Charset.defaultCharset()), null);
                         files.remove();
                     }
 
