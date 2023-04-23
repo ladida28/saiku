@@ -20,7 +20,12 @@ import java.util.List;
  */
 public class UserService implements IUserManager, Serializable {
 
-    private JdbcUserDAO uDAO;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -5935326681126370378L;
+
+	private JdbcUserDAO uDAO;
 
     private IDatasourceManager iDatasourceManager;
     private DatasourceService datasourceService;
@@ -32,7 +37,7 @@ public class UserService implements IUserManager, Serializable {
         this.adminRoles = adminRoles;
     }
 
-    public void setJdbcUserDAO(JdbcUserDAO jdbcUserDAO) {
+    public void setJdbcUserDAOOriginal(JdbcUserDAO jdbcUserDAO) {
         this.uDAO = jdbcUserDAO;
     }
 
