@@ -51,8 +51,11 @@ import org.olap4j.metadata.*;
 import org.olap4j.metadata.Level.Type;
 import org.olap4j.query.*;
 import org.olap4j.query.Selection.Operator;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.olap4j.
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.*;
 import java.math.BigDecimal;
@@ -71,7 +74,7 @@ public class OlapQueryService implements Serializable {
 	 */
 	private static final long serialVersionUID = -7615296596528274904L;
 
-	private static final Logger log = LoggerFactory.getLogger(OlapQueryService.class);
+	private static final Logger log = LogManager.getLogger(OlapQueryService.class);
 
 	private OlapDiscoverService olapDiscoverService;
 
