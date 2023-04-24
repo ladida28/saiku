@@ -33,8 +33,10 @@ import org.saiku.service.util.exception.SaikuServiceException;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -80,7 +82,7 @@ import javax.servlet.http.HttpSession;
 public class JackRabbitRepositoryManager implements IRepositoryManager {
   private static final String SAIKU_AUTH_PRINCIPAL = "SAIKU_AUTH_PRINCIPAL";
   
-  private static final Logger log = LoggerFactory.getLogger(JackRabbitRepositoryManager.class);
+  private static final Logger log = LogManager.getLogger(JackRabbitRepositoryManager.class);
   private static JackRabbitRepositoryManager ref;
   private final String data;
   private final String config;

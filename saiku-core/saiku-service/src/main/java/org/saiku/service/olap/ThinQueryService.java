@@ -78,9 +78,10 @@ import org.olap4j.metadata.Hierarchy;
 import org.olap4j.metadata.Level;
 import org.olap4j.metadata.Measure;
 import org.olap4j.metadata.Member;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.io.PrintWriter;
 import java.io.Serializable;
 import java.io.StringWriter;
@@ -111,7 +112,7 @@ public class ThinQueryService implements Serializable {
      */
     private static final long serialVersionUID = -7615296596528274904L;
 
-    private static final Logger log = LoggerFactory.getLogger(ThinQueryService.class);
+    private static final Logger log = LogManager.getLogger(ThinQueryService.class);
 
     private static final AtomicLong ID_GENERATOR = new AtomicLong();
 

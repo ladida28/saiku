@@ -21,8 +21,10 @@ import org.saiku.service.user.UserService;
 import com.qmino.miredot.annotations.ReturnType;
 
 import org.apache.commons.lang.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Component;
 
 import java.util.Map;
@@ -43,7 +45,7 @@ import javax.ws.rs.core.Response.Status;
 public class SessionResource  {
 
 
-	private static final Logger log = LoggerFactory.getLogger(SessionResource.class);
+	private static final Logger log = LogManager.getLogger(SessionResource.class);
 
 	private ISessionService sessionService;
     private UserService userService;

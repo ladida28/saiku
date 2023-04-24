@@ -26,8 +26,10 @@ import bi.meteorite.license.LicenseException;
 import bi.meteorite.license.SaikuLicense2;
 import org.saiku.service.util.security.authorisation.AuthorisationPredicate;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -53,7 +55,7 @@ import javax.servlet.http.HttpSession;
 
 public class SessionService implements ISessionService {
 
-	private static final Logger log = LoggerFactory.getLogger(SessionService.class);
+	private static final Logger log = LogManager.getLogger(SessionService.class);
 
 	private AuthenticationManager authenticationManager;
 	private AuthorisationPredicate authorisationPredicate;

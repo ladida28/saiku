@@ -30,8 +30,10 @@ import org.saiku.service.user.UserService;
 import org.saiku.service.util.exception.SaikuServiceException;
 
 import org.saiku.service.util.security.authentication.PasswordProvider;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -66,7 +68,7 @@ public class RepositoryDatasourceManager implements IDatasourceManager, Applicat
     private ScopedRepo sessionRegistry;
     private boolean workspaces;
     private UserService userService;
-    private static final Logger log = LoggerFactory.getLogger(RepositoryDatasourceManager.class);
+    private static final Logger log = LogManager.getLogger(RepositoryDatasourceManager.class);
     private String configurationpath;
     private String datadir;
     private IRepositoryManager irm;

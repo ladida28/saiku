@@ -13,8 +13,11 @@ import org.saiku.service.license.Base64Coder;
 import org.saiku.service.license.ILicenseUtils;
 
 import org.h2.jdbcx.JdbcDataSource;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
@@ -64,7 +67,7 @@ public class Database {
 
 
     private JdbcDataSource ds;
-    private static final Logger log = LoggerFactory.getLogger(Database.class);
+    private static final Logger log = LogManager.getLogger(Database.class);
     private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
     private IDatasourceManager dsm;
     public Database() {

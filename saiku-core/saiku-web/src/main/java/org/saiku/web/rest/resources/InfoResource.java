@@ -20,8 +20,10 @@ import org.saiku.service.util.dto.Plugin;
 
 import com.qmino.miredot.annotations.ReturnType;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -42,7 +44,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 @XmlAccessorType( XmlAccessType.NONE)
 public class InfoResource {
 
-  private static final Logger log = LoggerFactory.getLogger( InfoResource.class );
+  private static final Logger log = LogManager.getLogger( InfoResource.class );
 
   private PlatformUtilsService platformService;
 

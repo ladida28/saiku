@@ -7,8 +7,10 @@ import org.saiku.datasources.datasource.SaikuDatasource;
 import org.saiku.repository.IRepositoryManager;
 import org.saiku.service.datasource.IDatasourceManager;
 import org.saiku.service.importer.LegacyImporter;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.jcr.RepositoryException;
 import java.io.*;
@@ -26,7 +28,7 @@ import java.util.zip.ZipInputStream;
  * Created by bugg on 19/06/14.
  */
 public class LegacyImporterImpl implements LegacyImporter {
-    private static final Logger log = LoggerFactory.getLogger(LegacyImporter.class);
+    private static final Logger log = LogManager.getLogger(LegacyImporter.class);
     private final IDatasourceManager dsm;
 
     private URL repoURL;

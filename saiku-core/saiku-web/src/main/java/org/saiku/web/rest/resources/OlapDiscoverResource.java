@@ -18,8 +18,10 @@ package org.saiku.web.rest.resources;
 import org.saiku.olap.dto.*;
 import org.saiku.service.olap.OlapDiscoverService;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
@@ -43,7 +45,7 @@ public class OlapDiscoverResource implements Serializable {
 
 	private OlapDiscoverService olapDiscoverService;
     
-    private static final Logger log = LoggerFactory.getLogger(OlapDiscoverResource.class);
+    private static final Logger log = LogManager.getLogger(OlapDiscoverResource.class);
     
     public void setOlapDiscoverService(OlapDiscoverService olapds) {
         olapDiscoverService = olapds;

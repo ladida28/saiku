@@ -33,8 +33,10 @@ import com.qmino.miredot.annotations.ReturnType;
 import com.sun.jersey.core.header.FormDataContentDisposition;
 import com.sun.jersey.multipart.FormDataParam;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Component;
 
 import java.io.File;
@@ -68,7 +70,7 @@ import javax.ws.rs.core.Response.Status;
 @Path("/saiku/api/repository")
 public class BasicRepositoryResource2 implements ISaikuRepository {
 
-  private static final Logger log = LoggerFactory.getLogger(BasicRepositoryResource2.class);
+  private static final Logger log = LogManager.getLogger(BasicRepositoryResource2.class);
 
   private ISessionService sessionService;
 

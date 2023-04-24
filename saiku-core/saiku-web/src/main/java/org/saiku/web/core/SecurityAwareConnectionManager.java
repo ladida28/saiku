@@ -25,8 +25,10 @@ import org.saiku.service.ISessionService;
 import org.apache.commons.lang.StringUtils;
 import org.olap4j.OlapConnection;
 import org.olap4j.OlapException;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 
@@ -55,7 +57,7 @@ public class SecurityAwareConnectionManager extends AbstractConnectionManager im
 		this.sessionService = ss;
 	}
 
-    private static final Logger log = LoggerFactory.getLogger(SecurityAwareConnectionManager.class);
+    private static final Logger log = LogManager.getLogger(SecurityAwareConnectionManager.class);
 
 	@Override
 	public void init() {

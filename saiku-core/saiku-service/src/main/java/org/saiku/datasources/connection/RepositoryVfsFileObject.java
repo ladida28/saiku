@@ -12,8 +12,10 @@ import org.apache.commons.vfs2.operations.FileOperations;
 
 import org.saiku.service.datasource.IDatasourceManager;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
@@ -30,7 +32,7 @@ import javax.jcr.RepositoryException;
 public class RepositoryVfsFileObject
         implements FileObject
 {
-    private static final Logger log = LoggerFactory.getLogger(RepositoryVfsFileObject.class);
+    private static final Logger log = LogManager.getLogger(RepositoryVfsFileObject.class);
     private String fileRef;
     private boolean fileInitialized;
     private RepositoryFile repositoryFile;

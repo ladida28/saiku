@@ -30,8 +30,10 @@ import org.saiku.olap.dto.resultset.DataCell;
 import org.saiku.olap.dto.resultset.Matrix;
 import org.saiku.olap.dto.resultset.MemberCell;
 import org.saiku.olap.util.SaikuProperties;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
@@ -39,7 +41,7 @@ import java.util.*;
 
 public class HierarchicalCellSetFormatter implements ICellSetFormatter {
 
-    private static final Logger log = LoggerFactory.getLogger(HierarchicalCellSetFormatter.class);
+    private static final Logger log = LogManager.getLogger(HierarchicalCellSetFormatter.class);
 
     /**
    * Description of an axis.

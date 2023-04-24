@@ -25,8 +25,10 @@ import org.saiku.service.util.exception.SaikuServiceException;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -54,7 +56,7 @@ import javax.xml.bind.Unmarshaller;
  */
 public class ClassPathRepositoryManager implements IRepositoryManager {
     private static final String ORBIS_WORKSPACE_DIR = "workspace";
-    private static final Logger log = LoggerFactory.getLogger(ClassPathRepositoryManager.class);
+    private static final Logger log = LogManager.getLogger(ClassPathRepositoryManager.class);
 
     private static ClassPathRepositoryManager ref;
     private final String defaultRole;

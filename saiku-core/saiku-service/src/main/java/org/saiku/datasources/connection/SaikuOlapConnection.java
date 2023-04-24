@@ -17,8 +17,10 @@ package org.saiku.datasources.connection;
 
 import org.olap4j.OlapConnection;
 import org.olap4j.OlapWrapper;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -39,7 +41,7 @@ public class SaikuOlapConnection implements ISaikuConnection {
     private String password;
     private String passwordenc;
 
-    private static final Logger log = LoggerFactory.getLogger(SaikuOlapConnection.class);
+    private static final Logger log = LogManager.getLogger(SaikuOlapConnection.class);
 
 
     public SaikuOlapConnection(String name, Properties props) {

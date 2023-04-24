@@ -10,8 +10,10 @@
  */
 package org.saiku.license;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -25,7 +27,7 @@ public abstract class AbstractLicense implements Serializable, ILicense {
 
   private static final long serialVersionUID = -144058457108187374L;
   private static final Logger log =
-      LoggerFactory.getLogger(AbstractLicense.class);
+      LogManager.getLogger(AbstractLicense.class);
 
   /**
    * License type for lifetime version. Always valid.

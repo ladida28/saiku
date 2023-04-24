@@ -37,13 +37,15 @@ import com.itextpdf.text.pdf.PdfContentByte;
 import com.itextpdf.text.pdf.PdfWriter;
 import com.itextpdf.text.pdf.*;
 import com.itextpdf.text.pdf.PdfPTable;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 @SuppressWarnings("deprecation")
 public class PdfReport {
     private final ReportData section= new ReportData();
-    private static final Logger log = LoggerFactory.getLogger(PdfReport.class);
+    private static final Logger log = LogManager.getLogger(PdfReport.class);
 
     public byte[] pdf(CellDataSet c, String svg) {
 		section.setRowBody(c.getCellSetBody());

@@ -43,8 +43,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.exception.ExceptionUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Component;
 
 import java.io.InputStream;
@@ -75,7 +77,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 @Deprecated
 public class QueryResource {
 
-	private static final Logger log = LoggerFactory.getLogger(QueryResource.class);
+	private static final Logger log = LogManager.getLogger(QueryResource.class);
 
 	private OlapQueryService olapQueryService;
   private ISaikuRepository repository;

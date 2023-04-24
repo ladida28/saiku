@@ -22,8 +22,10 @@ import org.saiku.service.datasource.IDatasourceProcessor;
 import org.saiku.service.util.exception.SaikuServiceException;
 
 import org.olap4j.OlapConnection;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -37,7 +39,7 @@ import java.util.Properties;
 public abstract class AbstractConnectionManager implements IConnectionManager, Serializable {
 
   private static final long serialVersionUID = 4735617922513789022L;
-  private static final Logger log = LoggerFactory.getLogger(AbstractConnectionManager.class);
+  private static final Logger log = LogManager.getLogger(AbstractConnectionManager.class);
   private transient IDatasourceManager ds;
 
   public void setDataSourceManager( IDatasourceManager ds ) {

@@ -33,8 +33,10 @@ import com.sun.jersey.multipart.FormDataParam;
 
 import org.apache.commons.io.IOUtils;
 import org.saiku.service.importer.JujuSource;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Component;
 
 import java.io.*;
@@ -58,7 +60,7 @@ public class AdminResource {
     private DatasourceService datasourceService;
 
     private UserService userService;
-    private static final Logger log = LoggerFactory.getLogger(DataSourceResource.class);
+    private static final Logger log = LogManager.getLogger(DataSourceResource.class);
     private OlapDiscoverService olapDiscoverService;
     private LogExtractor logExtractor;
 

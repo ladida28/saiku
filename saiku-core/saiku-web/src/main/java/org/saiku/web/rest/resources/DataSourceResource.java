@@ -22,8 +22,10 @@ import org.saiku.web.rest.objects.DataSourceMapper;
 
 import com.qmino.miredot.annotations.ReturnType;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -42,7 +44,7 @@ import javax.ws.rs.core.Response.Status;
 @Path("/saiku/{username}/org.saiku.datasources")
 public class DataSourceResource {
 
-    private static final Logger log = LoggerFactory.getLogger(DataSourceResource.class);
+    private static final Logger log = LogManager.getLogger(DataSourceResource.class);
     private DatasourceService datasourceService;
 
     public void setDatasourceService(DatasourceService ds) {

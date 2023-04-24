@@ -7,8 +7,10 @@ import org.apache.commons.lang3.text.StrSubstitutor;
 import org.saiku.database.dto.MondrianSchema;
 import org.saiku.datasources.connection.RepositoryFile;
 import org.saiku.service.user.UserService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.jcr.RepositoryException;
 import javax.xml.bind.JAXBContext;
@@ -29,7 +31,7 @@ import javax.servlet.http.HttpSession;
 public class MarkLogicRepositoryManager implements IRepositoryManager {
   private static final String SAIKU_AUTH_PRINCIPAL = "SAIKU_AUTH_PRINCIPAL";
   
-  private static final Logger log = LoggerFactory.getLogger(MarkLogicRepositoryManager.class);
+  private static final Logger log = LogManager.getLogger(MarkLogicRepositoryManager.class);
 
   private static final String[] PARAMETER_DELIMITER = new String[]{"%(", ")"};
   private static final String HOMES_DIRECTORY = "/homes/";

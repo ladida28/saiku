@@ -44,13 +44,15 @@ import org.saiku.olap.dto.SaikuTag;
 import org.saiku.olap.dto.filter.SaikuFilter;
 import org.saiku.olap.util.exception.SaikuOlapException;
 import org.saiku.olap.util.formatter.ICellSetFormatter;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 
 public class MdxQuery implements IQuery {
 
-  private static final Logger log = LoggerFactory.getLogger(MdxQuery.class);
+  private static final Logger log = LogManager.getLogger(MdxQuery.class);
 
   private final Properties properties = new Properties();
   private String mdx;

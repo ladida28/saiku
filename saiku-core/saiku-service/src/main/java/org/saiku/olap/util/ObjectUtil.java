@@ -29,8 +29,10 @@ import org.olap4j.metadata.*;
 import org.olap4j.query.QueryAxis;
 import org.olap4j.query.QueryDimension;
 import org.olap4j.query.Selection;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.lang.reflect.Constructor;
 import java.sql.Connection;
@@ -48,7 +50,7 @@ import mondrian.olap4j.SaikuMondrianHelper;
  * ObjectUtil.
  */
 public class ObjectUtil {
-  private static final Logger LOG = LoggerFactory.getLogger(ObjectUtil.class);
+  private static final Logger LOG = LogManager.getLogger(ObjectUtil.class);
 
   private ObjectUtil() {
 

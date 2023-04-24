@@ -23,8 +23,10 @@ import org.saiku.olap.util.SaikuProperties;
 import org.saiku.service.olap.totals.TotalNode;
 import org.saiku.service.olap.totals.aggregators.TotalAggregator;
 import org.saiku.service.util.exception.SaikuServiceException;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.awt.*;
 import java.awt.Color;
@@ -77,7 +79,7 @@ public class ExcelWorksheetBuilder {
 
     private final Map<String, CellStyle> cellStyles = new HashMap<>();
 
-    private static final Logger log = LoggerFactory.getLogger(ExcelWorksheetBuilder.class);
+    private static final Logger log = LogManager.getLogger(ExcelWorksheetBuilder.class);
 
     public ExcelWorksheetBuilder(CellDataSet table, List<ThinHierarchy> filters, ExcelBuilderOptions options) {
         init(table, filters, options);
