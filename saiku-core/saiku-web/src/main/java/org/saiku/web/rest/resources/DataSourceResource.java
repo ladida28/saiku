@@ -30,7 +30,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Iterator;
+//import java.util.Iterator;
 import java.util.Map;
 
 import javax.ws.rs.*;

@@ -38,7 +38,7 @@ import org.saiku.query.metadata.CalculatedMember;
 import org.olap4j.Axis;
 import org.olap4j.OlapException;
 import org.olap4j.impl.IdentifierParser;
-import org.olap4j.mdx.IdentifierNode;
+//import org.olap4j.mdx.IdentifierNode;
 import org.olap4j.mdx.IdentifierSegment;
 
 import java.sql.SQLException;
@@ -47,9 +47,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import mondrian.olap4j.MondrianOlap4jLevel;
+//import mondrian.olap4j.MondrianOlap4jLevel;
 import mondrian.olap4j.SaikuMondrianHelper;
-import mondrian.rolap.RolapCubeLevel;
+//import mondrian.rolap.RolapCubeLevel;
 
 public class Fat {
 	

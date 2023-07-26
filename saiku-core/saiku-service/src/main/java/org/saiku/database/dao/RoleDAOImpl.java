@@ -2,7 +2,7 @@ package org.saiku.database.dao;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.saiku.database.dao.RoleDAO;
+//import org.saiku.database.dao.RoleDAO;
 import org.saiku.database.dto.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 

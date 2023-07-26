@@ -1,18 +1,18 @@
 package org.saiku.olap.discover;
 
-import java.io.File;
-import java.io.InputStream;
+//import java.io.File;
+//import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Properties;
+//import java.util.Properties;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.olap4j.OlapConnection;
-import org.saiku.datasources.connection.IConnectionManager;
-import org.saiku.datasources.connection.SimpleConnectionManager;
-import org.saiku.datasources.datasource.SaikuDatasource;
+//import org.saiku.datasources.connection.IConnectionManager;
+//import org.saiku.datasources.connection.SimpleConnectionManager;
+//import org.saiku.datasources.datasource.SaikuDatasource;
 import org.saiku.olap.dto.SaikuConnection;
 import org.saiku.olap.dto.SaikuCube;
 import org.saiku.olap.dto.SaikuDimension;
@@ -21,8 +21,8 @@ import org.saiku.olap.dto.SaikuLevel;
 import org.saiku.olap.dto.SaikuMember;
 import org.saiku.olap.dto.SimpleCubeElement;
 import org.saiku.olap.util.exception.SaikuOlapException;
-import org.saiku.service.datasource.ClassPathResourceDatasourceManager;
-import org.saiku.service.datasource.IDatasourceManager;
+//import org.saiku.service.datasource.ClassPathResourceDatasourceManager;
+//import org.saiku.service.datasource.IDatasourceManager;
 import static org.hamcrest.core.StringStartsWith.*;
 
 import static org.junit.Assert.*;

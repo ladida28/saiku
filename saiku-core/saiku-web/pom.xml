@@ -6,7 +6,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>saiku-web</artifactId>
-    <version>3.16</version>
+    <!--<version>3.16</version>-->
     <name>saiku - web</name>
     <packaging>jar</packaging>
 
@@ -23,7 +23,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
-                <version>2.1.2</version>
+                <!-- <version>2.1.2</version>-->
                 <executions>
                     <execution>
                         <id>attach-sources</id>
@@ -37,7 +37,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.0.2</version>
+                <!-- <version>2.0.2</version> -->
                 <configuration>
                     <source>${maven.compiler.source}</source>
                     <target>${maven.compiler.target}</target>
@@ -279,7 +279,7 @@
         <dependency>
             <groupId>org.jasig.cas.client</groupId>
             <artifactId>cas-client-core</artifactId>
-            <version>3.3.2</version>
+            <!-- <version>3.3.2</version> -->
         </dependency>
        <!-- <dependency>
             <groupId>org.springframework.security</groupId>

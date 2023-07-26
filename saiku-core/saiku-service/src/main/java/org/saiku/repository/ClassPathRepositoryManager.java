@@ -526,8 +526,9 @@ public class ClassPathRepositoryManager implements IRepositoryManager {
                         ms.setPath(file.getPath().substring(this.getDatadir().length() - 2, file.getPath().length()));
                         schema.add(ms);
                         break;
-                    }
+                    }   
                 }
+                scanner.close();
             } catch (FileNotFoundException e) {
                 //handle this
             }

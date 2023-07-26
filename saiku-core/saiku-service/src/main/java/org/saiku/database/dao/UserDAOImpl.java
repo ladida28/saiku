@@ -4,7 +4,7 @@ package org.saiku.database.dao;
 import org.hibernate.query.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.saiku.database.dao.UserDAO;
+//import org.saiku.database.dao.UserDAO;
 import org.saiku.database.dto.User;
 import org.springframework.beans.factory.annotation.Autowired;
 

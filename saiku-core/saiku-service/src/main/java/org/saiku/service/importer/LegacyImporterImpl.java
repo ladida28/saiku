@@ -6,7 +6,7 @@ import org.apache.commons.vfs2.VFS;
 import org.saiku.datasources.datasource.SaikuDatasource;
 import org.saiku.repository.IRepositoryManager;
 import org.saiku.service.datasource.IDatasourceManager;
-import org.saiku.service.importer.LegacyImporter;
+//import org.saiku.service.importer.LegacyImporter;
 //import org.slf4j.Logger;
 //import org.slf4j.LoggerFactory;
 import org.apache.logging.log4j.LogManager;

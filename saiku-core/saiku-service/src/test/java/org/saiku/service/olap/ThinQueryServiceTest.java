@@ -3,7 +3,7 @@ package org.saiku.service.olap;
 
 import static org.junit.Assert.assertEquals;
 
-import java.io.FileNotFoundException;
+//import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.StringWriter;
 

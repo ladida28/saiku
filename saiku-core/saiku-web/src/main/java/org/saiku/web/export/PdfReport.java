@@ -11,12 +11,12 @@ import com.itextpdf.text.pdf.PdfContentByte;
 import com.itextpdf.text.pdf.PdfWriter;
 
 import java.net.URISyntaxException;
-import org.apache.avalon.framework.configuration.ConfigurationException;
+//import org.apache.avalon.framework.configuration.ConfigurationException;
 import org.apache.batik.transcoder.TranscoderInput;
 import org.apache.batik.transcoder.print.PrintTranscoder;
 import org.apache.commons.lang.StringUtils;
 import org.apache.fop.apps.Fop;
-import org.apache.fop.apps.FopConfParser;
+//import org.apache.fop.apps.FopConfParser;
 import org.apache.fop.apps.FopFactory;
 import org.apache.fop.apps.FopFactoryBuilder;
 import org.apache.fop.apps.MimeConstants;
@@ -27,8 +27,8 @@ import org.saiku.web.rest.objects.resultset.QueryResult;
 //import org.slf4j.LoggerFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.apache.avalon.framework.configuration.Configuration;
-import org.apache.avalon.framework.configuration.DefaultConfigurationBuilder;
+//import org.apache.avalon.framework.configuration.Configuration;
+//import org.apache.avalon.framework.configuration.DefaultConfigurationBuilder;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -38,7 +38,7 @@ import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.sax.SAXResult;
-import javax.xml.transform.stream.StreamResult;
+//import javax.xml.transform.stream.StreamResult;
 import java.awt.*;
 import java.awt.print.PageFormat;
 import java.awt.print.Paper;
@@ -46,7 +46,7 @@ import java.io.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import org.xml.sax.SAXException;
+//import org.xml.sax.SAXException;
 
 /**
  * This PdfReport reads in a QueryResult and converts it to HTML, DOM, FO and eventually to a byte array containing the PDF data

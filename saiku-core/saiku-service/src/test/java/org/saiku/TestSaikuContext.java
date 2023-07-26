@@ -1,29 +1,29 @@
 
 package org.saiku;
 
-import org.saiku.datasources.connection.IConnectionManager;
-import org.saiku.datasources.connection.SimpleConnectionManager;
-import org.saiku.datasources.datasource.SaikuDatasource;
-import org.saiku.olap.discover.OlapMetaExplorer;
+//import org.saiku.datasources.connection.IConnectionManager;
+//import org.saiku.datasources.connection.SimpleConnectionManager;
+//import org.saiku.datasources.datasource.SaikuDatasource;
+//import org.saiku.olap.discover.OlapMetaExplorer;
 import org.saiku.olap.dto.SaikuCube;
-import org.saiku.service.datasource.ClassPathResourceDatasourceManager;
+//import org.saiku.service.datasource.ClassPathResourceDatasourceManager;
 import org.saiku.service.datasource.DatasourceService;
-import org.saiku.service.datasource.IDatasourceManager;
+//import org.saiku.service.datasource.IDatasourceManager;
 import org.saiku.service.olap.OlapDiscoverService;
 import org.saiku.service.olap.ThinQueryService;
 
-import java.io.File;
-import java.io.InputStream;
-import java.util.Properties;
+//import java.io.File;
+//import java.io.InputStream;
+//import java.util.Properties;
 
 
 public class TestSaikuContext {
     
 	private static TestSaikuContext instance;
 	public static boolean DEBUG = false;
-	private IDatasourceManager datasourceManager;
-	private IConnectionManager connectionManager;
-	private OlapMetaExplorer olapMetaExplorer;
+	//private IDatasourceManager datasourceManager;
+	//private IConnectionManager connectionManager;
+	//private OlapMetaExplorer olapMetaExplorer;
 	public OlapDiscoverService olapDiscoverService;
 	public DatasourceService datasourceService;
 	public ThinQueryService thinQueryService;
