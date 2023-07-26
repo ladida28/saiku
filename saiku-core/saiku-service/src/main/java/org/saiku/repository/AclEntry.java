@@ -35,7 +35,7 @@ public class AclEntry {
 	 * Creates an acl entry for a resource owned by saiku with 
 	 * public access
 	 */
-  @Deprecated
+  //@Deprecated
   public AclEntry() {
 		this(STATIC_OWNER);
 	}
