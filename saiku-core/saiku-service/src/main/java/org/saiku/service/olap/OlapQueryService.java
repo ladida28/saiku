@@ -213,7 +213,8 @@ public class OlapQueryService implements Serializable {
 			CellDataSet result = OlapResultSetUtil.cellSet2Matrix(cellSet,formatter);
 			Long format = (new Date()).getTime();
 			
-			result.setRuntime(new Double(format - start).intValue());
+			//result.setRuntime(new Double(format - start).intValue());
+			result.setRuntime(Double.valueOf(format - start).intValue());
 			getIQuery(queryName).storeCellset(cellSet);
 			getIQuery(queryName).storeFormatter(formatter);
 			// we could do a check if query.getTotalFunctions() actually includes a total function and if not dont execute the following

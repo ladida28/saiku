@@ -39,6 +39,7 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -259,7 +260,7 @@ public class ExporterResource {
 			}
             if(getVersion()!=null && !getVersion().contains("EE"))
             {
-                String watermark = IOUtils.toString(ExporterResource.class.getResource("/org/saiku/web/svg/watermark.svg"));
+                String watermark = IOUtils.toString(ExporterResource.class.getResource("/org/saiku/web/svg/watermark.svg"),StandardCharsets.UTF_8);
                 svg = svg.replace("</svg>", watermark + "</svg>");
             }
 			final InputStream in = new ByteArrayInputStream(svg.getBytes("UTF-8"));

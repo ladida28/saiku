@@ -1,6 +1,7 @@
 package org.saiku.repository;
 
 import com.marklogic.xcc.*;
+import com.marklogic.xcc.Session.Update;
 import com.marklogic.xcc.exceptions.RequestException;
 import com.marklogic.xcc.exceptions.XccConfigException;
 import org.apache.commons.lang3.text.StrSubstitutor;
@@ -691,7 +692,8 @@ public class MarkLogicRepositoryManager implements IRepositoryManager {
 
   private Session createUpdateSession() {
     Session session = contentSource.newSession();
-    session.setTransactionMode(Session.TransactionMode.UPDATE);
+    //session.setTransactionMode(Session.TransactionMode.UPDATE);
+    session.setUpdate(Update.TRUE);
     return session;
   }
 
