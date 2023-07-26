@@ -36,7 +36,7 @@ import static org.junit.Assert.assertNotNull;
  * Created by bugg on 14/05/14.
  */
 class JackrabbitRepositoryDef {
-    private final List dupliacteUsers = new ArrayList<>();
+    private final List<String> dupliacteUsers = new ArrayList<String>();
 
     @Steps
     private

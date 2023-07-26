@@ -111,7 +111,7 @@ public class JdbcUserDAO
             getJdbcTemplate().queryForObject(sql, new Object[] { user.getId() }, String.class);
         if (roles != null)
         {
-            List<String> list = new ArrayList(Arrays.asList(roles.split(",")));
+            List<String> list = new ArrayList<String>(Arrays.asList(roles.split(",")));
             String[] stockArr = new String[list.size()];
             return list.toArray(stockArr);
         }
@@ -192,7 +192,7 @@ public class JdbcUserDAO
             user.setPassword(rs.getString("password"));
             if (rs.getString("ROLES") != null)
             {
-                List<String> list = new ArrayList(Arrays.asList(rs.getString("ROLES").split(",")));
+                List<String> list = new ArrayList<String>(Arrays.asList(rs.getString("ROLES").split(",")));
                 String[] stockArr = new String[list.size()];
                 stockArr = list.toArray(stockArr);
                 user.setRoles(stockArr);

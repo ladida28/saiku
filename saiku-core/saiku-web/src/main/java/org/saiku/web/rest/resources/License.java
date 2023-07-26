@@ -187,7 +187,7 @@ public class License {
     try {
       List<String> l = getAuthUsers();
       if(l!=null) {
-        List<UserList> ul = new ArrayList();
+        List<UserList> ul = new ArrayList<UserList>();
         int i = 0;
         for (String l2 : l) {
           ul.add(new UserList(l2, i));
