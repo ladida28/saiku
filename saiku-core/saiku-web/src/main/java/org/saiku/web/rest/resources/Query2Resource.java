@@ -42,6 +42,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Component;
 
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -717,7 +718,7 @@ public class Query2Resource {
                 if (css) {
                     html += "<style>\n";
                     InputStream is = JSConverter.class.getResourceAsStream("saiku.table.full.css");
-                    String cssContent = IOUtils.toString(is);
+                    String cssContent = IOUtils.toString(is,StandardCharsets.UTF_8);
                     html += cssContent;
                     html += "</style>\n";
                 }
@@ -766,7 +767,8 @@ public class Query2Resource {
           CollectionType ct =
               mapper.getTypeFactory().constructCollectionType(ArrayList.class, String.class);
 
-          JavaType st = mapper.getTypeFactory().uncheckedSimpleType(String.class);
+          //JavaType st = mapper.getTypeFactory().uncheckedSimpleType(String.class);
+          JavaType st = mapper.getTypeFactory().constructSimpleType(String.class, null);
 
 
             Map<String, List<String>> levels = mapper.readValue(returns, mapper.getTypeFactory().constructMapType(Map.class, st, ct));
