@@ -6,6 +6,7 @@ import static org.junit.Assert.assertEquals;
 //import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.StringWriter;
+import java.nio.charset.StandardCharsets;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.io.IOUtils;
@@ -260,7 +261,7 @@ public class ThinQueryServiceTest {
 		StringWriter stringWriter = new StringWriter();
 		FileSystemManager fileSystemManager = VFS.getManager();
 		FileObject fileObject = fileSystemManager.resolveFile("res:queries/" + name + ".json");
-		IOUtils.copy(fileObject.getContent().getInputStream(), stringWriter);
+		IOUtils.copy(fileObject.getContent().getInputStream(), stringWriter,StandardCharsets.UTF_8);
 		String expected = stringWriter.toString();
 		assertEquals(expected, actual);
 	}

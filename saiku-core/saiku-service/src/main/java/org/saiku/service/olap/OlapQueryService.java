@@ -694,10 +694,11 @@ public class OlapQueryService implements Serializable {
 				v = Integer.parseInt(value);
 			} catch (Exception e) {
 				v = Double.parseDouble(value);
+				
 			}
-			if (v == null) {
+			/*if (v == null) {
 				throw new SaikuServiceException("Error setting value of query " + queryName + " to:" + v);
-			}
+			}*/
 
 		  String allocationPolicy = AllocationPolicy.EQUAL_ALLOCATION.toString();
 

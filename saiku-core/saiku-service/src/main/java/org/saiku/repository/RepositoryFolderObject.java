@@ -2,15 +2,15 @@ package org.saiku.repository;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+//import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import org.apache.commons.lang.builder.ToStringBuilder;
 
 import java.util.List;
 
 
+//@JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
 public class RepositoryFolderObject implements IRepositoryObject {
 
 	private Type type;

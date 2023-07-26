@@ -177,7 +177,8 @@ public class FilterRepositoryResource {
 		try {
 			
 			ObjectMapper mapper = new ObjectMapper();
-		    mapper.setVisibilityChecker(mapper.getVisibilityChecker().withFieldVisibility(JsonAutoDetect.Visibility.ANY));
+		    //mapper.setVisibilityChecker(mapper.getVisibilityChecker().withFieldVisibility(JsonAutoDetect.Visibility.ANY));
+			mapper.setVisibility(mapper.getVisibilityChecker().withFieldVisibility(JsonAutoDetect.Visibility.ANY));
 			SaikuFilter filter = mapper.readValue(filterJSON, SaikuFilter.class);
 			String username = sessionService.getAllSessionObjects().get("username").toString();
 			filter.setOwner(username);
