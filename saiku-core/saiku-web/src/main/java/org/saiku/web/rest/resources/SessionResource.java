@@ -119,7 +119,7 @@ public class SessionResource  {
    * @param req The servlet request
    * @return A reponse with a session map
    */
-	@POST
+	@GET
 	@Consumes("application/x-www-form-urlencoded")
 	@Produces(MediaType.APPLICATION_JSON)
     @ReturnType("java.util.Map<String, Object>")
