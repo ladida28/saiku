@@ -119,9 +119,8 @@ public class SessionResource  {
    * @param req The servlet request
    * @return A reponse with a session map
    */
-	@GET
-	//@Consumes("application/x-www-form-urlencoded")
-	@Consumes("application/json")
+	@POST
+	@Consumes("application/x-www-form-urlencoded")
 	@Produces(MediaType.APPLICATION_JSON)
     @ReturnType("java.util.Map<String, Object>")
     public Response getSession(@Context HttpServletRequest req) {
