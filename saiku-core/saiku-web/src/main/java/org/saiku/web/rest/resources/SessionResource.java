@@ -120,7 +120,8 @@ public class SessionResource  {
    * @return A reponse with a session map
    */
 	@GET
-	@Consumes("application/x-www-form-urlencoded")
+	//@Consumes("application/x-www-form-urlencoded")
+	@Consumes("application/json")
 	@Produces(MediaType.APPLICATION_JSON)
     @ReturnType("java.util.Map<String, Object>")
     public Response getSession(@Context HttpServletRequest req) {
