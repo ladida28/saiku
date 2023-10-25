@@ -4,7 +4,8 @@ import com.marklogic.xcc.*;
 import com.marklogic.xcc.Session.Update;
 import com.marklogic.xcc.exceptions.RequestException;
 import com.marklogic.xcc.exceptions.XccConfigException;
-import org.apache.commons.lang3.text.StrSubstitutor;
+//import org.apache.commons.lang3.text.StrSubstitutor;
+import org.apache.commons.text.StringSubstitutor;
 import org.saiku.database.dto.MondrianSchema;
 import org.saiku.datasources.connection.RepositoryFile;
 import org.saiku.service.user.UserService;
@@ -88,7 +89,7 @@ public class MarkLogicRepositoryManager implements IRepositoryManager {
         .put("password", password)
         .put("database", database).build();
 
-    StrSubstitutor sub = createStrSubstitutor(values);
+    StringSubstitutor sub = createStrSubstitutor(values);
 
     connectionUrl = sub.replace("xcc://%(username):%(password)@%(host):%(port)/%(database)");
 
@@ -664,7 +665,7 @@ public class MarkLogicRepositoryManager implements IRepositoryManager {
 
     Map<String, String> parameters = ParamsMap.init().put("path", path).build();
     String update = "xdmp:directory-create('%(path)')";
-    StrSubstitutor sub = createStrSubstitutor(parameters);
+    StringSubstitutor sub = createStrSubstitutor(parameters);
     AdhocQuery request = session.newAdhocQuery(sub.replace(update));
 
     try {
@@ -707,7 +708,7 @@ public class MarkLogicRepositoryManager implements IRepositoryManager {
     AdhocQuery request = null;
 
     if (parameters != null) {
-      StrSubstitutor sub = createStrSubstitutor(parameters);
+      StringSubstitutor sub = createStrSubstitutor(parameters);
       request = session.newAdhocQuery(sub.replace(update));
     } else {
       request = session.newAdhocQuery(update);
@@ -729,8 +730,8 @@ public class MarkLogicRepositoryManager implements IRepositoryManager {
    * @param values
    * @return
    */
-  private static StrSubstitutor createStrSubstitutor(Map<String, String> values) {
-    return new StrSubstitutor(values, PARAMETER_DELIMITER[0], PARAMETER_DELIMITER[1]);
+  private static StringSubstitutor createStrSubstitutor(Map<String, String> values) {
+    return new StringSubstitutor(values, PARAMETER_DELIMITER[0], PARAMETER_DELIMITER[1]);
   }
 
   /**
