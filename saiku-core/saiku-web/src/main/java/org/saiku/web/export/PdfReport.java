@@ -9,6 +9,7 @@ import com.itextpdf.text.*;
 import com.itextpdf.text.Rectangle;
 import com.itextpdf.text.pdf.PdfContentByte;
 import com.itextpdf.text.pdf.PdfWriter;
+import com.itextpdf.awt.PdfGraphics2D;
 
 import java.net.URISyntaxException;
 //import org.apache.avalon.framework.configuration.ConfigurationException;
@@ -53,7 +54,8 @@ import java.util.Date;
  */
 public class PdfReport {
 
-    private static final Logger log = LogManager.getLogger(PdfReport.class);
+    @SuppressWarnings("unused")
+	private static final Logger log = LogManager.getLogger(PdfReport.class);
 
     private static final float marginLeft = 15;
     private static final float marginRight = 15;
@@ -121,7 +123,8 @@ public class PdfReport {
         cb.concatCTM(1.0f, 0, 0, 1.0f, 36, 0);
         float width = document.getPageSize().getWidth() - 20;
         float height = document.getPageSize().getHeight() - 20;
-        Graphics2D graphics = cb.createGraphics(width, height);
+        //Graphics2D graphics = cb.createGraphics(width, height);      
+        Graphics2D graphics = new PdfGraphics2D(cb,width,height);
         //graphics.rotate(Math.toRadians(-90), 100, 100);
         PrintTranscoder prm = new PrintTranscoder();
         TranscoderInput ti = new TranscoderInput(new StringReader(t));
