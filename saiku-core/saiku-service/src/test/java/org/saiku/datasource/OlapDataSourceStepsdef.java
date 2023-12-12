@@ -31,7 +31,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 /**
  * Story for lookup_datasources.story
  */
-class OlapDataSourceStepsdef {
+public class OlapDataSourceStepsdef {
 
   @Steps
   private
