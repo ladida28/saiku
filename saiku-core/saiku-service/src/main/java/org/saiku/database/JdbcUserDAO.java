@@ -125,7 +125,7 @@ public class JdbcUserDAO
             new Object[] { userId }, new UserMapper()).get(0);
     }
 
-    public Collection findAllUsers()
+    public Collection<SaikuUser> findAllUsers()
     {
         return getJdbcTemplate().query(prop.getProperty("getAllUsers"), new UserMapper());
     }
@@ -180,9 +180,9 @@ public class JdbcUserDAO
     }
 
     private static final class UserMapper
-            implements RowMapper
+            implements RowMapper<SaikuUser>
     {
-        public Object mapRow(ResultSet rs, int rowNum)
+        public SaikuUser mapRow(ResultSet rs, int rowNum)
                 throws SQLException
         {
             SaikuUser user = new SaikuUser();

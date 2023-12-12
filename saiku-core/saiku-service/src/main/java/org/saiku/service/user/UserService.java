@@ -78,7 +78,7 @@ public class UserService implements IUserManager, Serializable {
     }
 
     public List<SaikuUser> getUsers() {
-        Collection users = uDAO.findAllUsers();
+        Collection<SaikuUser> users = uDAO.findAllUsers();
         List<SaikuUser> l = new ArrayList<>();
         for (Object user : users) {
             l.add((SaikuUser) user);
