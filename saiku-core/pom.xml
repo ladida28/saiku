@@ -9,7 +9,7 @@
     <artifactId>saiku-core</artifactId>
     <packaging>pom</packaging>
     <name>saiku - core libraries</name>
-    <version>3.16</version>
+    <!--<version>3.16</version>-->
 
     <modules>
         <module>saiku-olap-util</module>
@@ -63,7 +63,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jxr-plugin</artifactId>
-                <version>2.1</version>
+                <version>2.5</version> <!-- 2.1 -->
                 <configuration>
                     <aggregate>true</aggregate>
                 </configuration>

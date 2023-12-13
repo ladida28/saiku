@@ -292,6 +292,10 @@
             <artifactId>hazelcast</artifactId>
             <version>3.6.2</version>
         </dependency>
+        <dependency>
+        	<groupId>javax.jcr</groupId>
+            <artifactId>jcr</artifactId>
+        </dependency>
     </dependencies>
     
     <reporting>

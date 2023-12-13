@@ -132,7 +132,6 @@ public class OlapDiscoverResource implements Serializable {
    * @return A metadata object.
    */
 	@GET
-	@Consumes("application/x-www-form-urlencoded")
     @Produces({"application/json" })
 	@Path("/{connection}/{catalog}/{schema}/{cube}/metadata")
      public SaikuCubeMetadata getMetadata(
