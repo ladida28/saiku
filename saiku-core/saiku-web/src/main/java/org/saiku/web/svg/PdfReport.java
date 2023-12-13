@@ -17,6 +17,7 @@ import org.apache.commons.lang.StringUtils;
 import org.saiku.olap.dto.resultset.CellDataSet;
 import org.saiku.olap.dto.resultset.DataCell;
 
+import com.itextpdf.awt.PdfGraphics2D;
 /*import com.lowagie.text.Document;
 import com.lowagie.text.DocumentException;
 import com.lowagie.text.Element;
@@ -85,7 +86,8 @@ public class PdfReport {
 				cb.concatCTM(1.0f, 0, 0, 1.0f, 36, 0);
 				float width = document.getPageSize().getWidth() - 20;
 				float height = document.getPageSize().getHeight() - 20;
-				Graphics2D g2 = cb.createGraphics(width, height);
+				//Graphics2D g2 = cb.createGraphics(width, height);
+				Graphics2D g2 = new PdfGraphics2D(cb,width,height);
 				//g2.rotate(Math.toRadians(-90), 100, 100);
 				PrintTranscoder prm = new PrintTranscoder();
 				TranscoderInput ti = new TranscoderInput(new StringReader(t));
