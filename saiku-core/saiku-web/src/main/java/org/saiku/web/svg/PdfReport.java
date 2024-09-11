@@ -33,7 +33,8 @@ import com.lowagie.text.pdf.PdfPCell;
 import com.lowagie.text.pdf.PdfPTable;
 import com.lowagie.text.pdf.PdfWriter;*/
 import com.itextpdf.text.*;
-import com.itextpdf.text.html.WebColors;
+//import com.itextpdf.text.html.WebColors;
+//import com.itextpdf.text.html.BaseColor;
 import com.itextpdf.text.pdf.PdfContentByte;
 import com.itextpdf.text.pdf.PdfWriter;
 import com.itextpdf.text.pdf.*;
@@ -53,7 +54,8 @@ public class PdfReport {
 		section.setRowHeader(c.getCellSetHeaders());
 		
 		Document document = new Document(PageSize.A4.rotate(),0,0,30,10);
-		BaseColor color = WebColors.getRGBColor("#002266");
+		//BaseColor color = WebColors.getRGBColor("#002266");
+		BaseColor color = new BaseColor(0,34,102);
 		
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		int dim = section.dimTab(c.getCellSetBody(), c.getCellSetHeaders());
@@ -151,7 +153,8 @@ public class PdfReport {
 			PdfPCell cell = new PdfPCell(new Phrase(aSection
 				.getHead().get(x), FontFactory.getFont(
 				FontFactory.HELVETICA, 8)));
-			cell.setBackgroundColor(WebColors.getRGBColor("#B9D3EE"));
+			//cell.setBackgroundColor(WebColors.getRGBColor("#B9D3EE"));
+			cell.setBackgroundColor(new BaseColor(185,211,238));
 			cell.setBorder(Rectangle.NO_BORDER);
 			cell.setBorder(Rectangle.BOTTOM);
 			if (aSection
