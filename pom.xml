@@ -44,8 +44,8 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <top.dir>${project.basedir}</top.dir>
         <!--<spring.version>4.1.6.RELEASE</spring.version> -->
-        <spring.version>4.3.30.RELEASE</spring.version>
-        <spring.security.version>4.2.20.RELEASE</spring.security.version> <!-- 4.0.1.RELEASE-->
+        <spring.version>4.3.30.RELEASE</spring.version> <!-- 5.3.31  -->
+        <spring.security.version>4.2.20.RELEASE</spring.security.version> <!-- 5.3.13.RELEASE  4.0.1.RELEASE-->
         <slf4j.version>2.0.7</slf4j.version> <!-- 1.7.25 1.6.4 -->
         <mondrian.version>9.6.0.0-SNAPSHOT</mondrian.version> <!-- 9.5.0.0-SNAPSHOT -->
         <jersey.version>1.19</jersey.version>
@@ -162,7 +162,7 @@
 
         <repository>
             <id>miredot</id>
-            <url>https://nexus.qmino.com/content/repositories/miredot/</url>
+            <url>http://nexus.qmino.com/content/repositories/miredot/</url>
         </repository>
         <repository>
             <id>clojars</id>
